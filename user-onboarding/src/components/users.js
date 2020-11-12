@@ -15,13 +15,10 @@ export default function Users(props) {
             } < /h2> <
             p > Email: {
                 user.email
-            } < /p> <
-            p > Postion: {
-                user.position
-            } < /p> <
-            p > Terms of Service: {
-                user.termsOfService
-            } < /p> <
+            } < /p> {
+                /* <p>Postion: {user.position}</p>
+                            <p>Terms of Service: {user.termsOfService}</p> */
+            } <
             />
         )
     })

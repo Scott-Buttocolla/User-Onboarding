@@ -11,6 +11,8 @@ describe("User-Onboarding app", () => {
     const checkBox = () => cy.get('input[name="termsOfService"]')
     const radioButton = () => cy.get('input[name="title"]')
     const nameValidationError = () => cy.get('input[name="errors"]');
+
+
     // here go our tests
     // 'it' is a test
     it("sanity test to make sure tests work", () => {
@@ -60,11 +62,10 @@ describe("User-Onboarding app", () => {
             .should('exist')
             .click();
     })
-    // it("Radio button tests", () => {
-    //     radioButton()
-    //         .should('exist')
-    //         .click()
-    // })
+    it("Radio button tests", () => {
+        radioButton()
+
+    })
     // it('Validation error test', () => {
     //     nameInput()
     //         .type('Scott test')

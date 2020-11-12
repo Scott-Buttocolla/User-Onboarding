@@ -16,14 +16,14 @@ export default yup.object().shape({
         .string()
         .min(7, 'Password must be at least 7 characters long')
         .required('Password is Required'),
-    position: yup
-        .string()
-        .oneOf(['Team Leader', 'Frontend Engineer', 'Backend Engineer', 'UI/UX Designer'], 'You must select a position')
-        .required('You must select a position'),
-    title: yup
-        .string()
-        .required("Must select one"),
-    termsOfService: yup
-        .string()
-        .required("Must check")
+    // position: yup
+    //     .string()
+    //     .oneOf(['Team Leader', 'Frontend Engineer', 'Backend Engineer', 'UI/UX Designer'], 'You must select a position')
+    //     .required('You must select a position'),
+    // title: yup
+    //     .string()
+    //     .required("Must select one"),
+    // termsOfService: yup
+    //     .string()
+    //     .required("Must check")
 })
