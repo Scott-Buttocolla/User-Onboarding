@@ -1,7 +1,4 @@
-import React, {
-  useState,
-  useEffect
-} from "react";
+import React, { useState, useEffect } from "react";
 // installed axios and yup per readMe file
 import axios from "axios";
 import * as yup from "yup";
@@ -15,9 +12,10 @@ const initialFormValues = {
   name: "",
   email: "",
   password: "",
+  termsOfService: false,
   // position: "",
   // title: "",
-  termsOfService: false,
+  
 };
 // setting errors on mandatory values that the user MUST fill in
 const initialFormErrors = {
@@ -37,17 +35,20 @@ function App() {
   const [formErrors, setFormErrors] = useState(initialFormErrors);
   const [disabled, setDisabled] = useState(initialDisabled);
 
+
   const getUserData = () => {
-    axios
-      .get("https://reqres.in/api/users")
-      .then((response) => {
-        setUsers(response.data);
-        debugger;
+    axios.get("https://reqres.in/api/users")
+      .then(response => {
+        setUsers(response.data.data);
       })
-      .catch((error) => {
-        console.log(error);
-      });
-  };
+      .catch(error => {
+        console.log(error)
+      })
+  }
+  useEffect(getUserData);
+
+
+
   const postNewUsers = (newUser) => {
     axios
       .post("https://reqres.in/api/users", newUser)
@@ -110,31 +111,17 @@ function App() {
     });
   }, [formValues]);
 
-  return ( <
-    div className = "App" >
-    <
-    Form // calling each function through the props
-    values = {
-      formValues
-    }
-    inputChange = {
-      inputChange
-    }
-    submit = {
-      submit
-    }
-    errors = {
-      formErrors
-    }
-    disabled = {
-      disabled
-    }
-    /> <
-    Users users = {
-      users
-    }
-    /> < /
-    div >
+  return (
+    <div className="App">
+      <Form // calling each function through the props
+        values={formValues}
+        inputChange={inputChange}
+        submit={submit}
+        errors={formErrors}
+        disabled={disabled}
+      />
+      <Users users={users} />
+    </div>
   );
 }
 

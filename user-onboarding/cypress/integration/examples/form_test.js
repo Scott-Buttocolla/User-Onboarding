@@ -1,3 +1,5 @@
+
+
 describe("User-Onboarding app", () => {
     beforeEach(() => {
         // arbitrary code you want running before your tests start: setup
@@ -9,8 +11,8 @@ describe("User-Onboarding app", () => {
     const passwordInput = () => cy.get('input[name="password"]');
     const submitButton = () => cy.get('button')
     const checkBox = () => cy.get('input[name="termsOfService"]')
-    const radioButton = () => cy.get('input[name="title"]')
-    const nameValidationError = () => cy.get('input[name="errors"]');
+    // const radioButton = () => cy.get('input[name="title"]')
+    const nameValidationError = () => cy.get('div[class="errors"]');
 
 
     // here go our tests
@@ -50,6 +52,11 @@ describe("User-Onboarding app", () => {
             .type('Password')
             .should("have.value", "Password")
     })
+    it("Check box tests", () => {
+        checkBox()
+            .should('exist')
+            .click();
+    })
 
     it("Submit button tests", () => {
         submitButton()
@@ -57,21 +64,16 @@ describe("User-Onboarding app", () => {
             .should('be.disabled')
     })
 
-    it("Check box tests", () => {
-        checkBox()
-            .should('exist')
-            .click();
-    })
+
     // it("Radio button tests", () => {
     //     radioButton()
 
     // })
     it('Validation error test', () => {
         nameInput()
-            .type('Scott test')
-            .clear();
-        nameValidationError()
-            .should('exist')
+            .type('Doug')
+            cy.contains("name must be longer then 5 characters").should("exist");
+        // nameValidationError()
+        //     .should('exist')
     })
-
 });
