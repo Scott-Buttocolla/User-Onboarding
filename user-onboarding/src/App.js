@@ -1,4 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, {
+  useState,
+  useEffect
+} from 'react';
 // installed axios and yup per readMe file
 import axios from 'axios';
 import * as yup from 'yup';
@@ -39,6 +42,7 @@ function App() {
     axios.get("https://reqres.in/api/users")
       .then(response => {
         setUsers(response.data);
+        debugger;
       })
       .catch(error => {
         console.log(error)
@@ -53,9 +57,9 @@ function App() {
       .catch(error => {
         console.log(error)
       })
-      // .finally(() => {
-      //   setFormValues(initialFormValues)
-      // })
+    // .finally(() => {
+    //   setFormValues(initialFormValues)
+    // })
   }
   const inputChange = (name, value) => {
     yup
@@ -96,6 +100,10 @@ function App() {
     postNewUsers(newUser);
   }
 
+  // useEffect(() => {
+  //   getUserData();
+  // }, []);
+
   useEffect(() => {
     formSchema.isValid(formValues).then((valid) => {
       setDisabled(!valid);
@@ -103,20 +111,34 @@ function App() {
   }, [formValues]);
 
 
-  return (
-    <div className="App">
-      <Form
-      // calling each function through the props
-      values = {formValues}
-      inputChange = {inputChange}
-      submit = {submit}
-      errors = {formErrors}
-      disabled = {disabled}
-      />
-      <Users
-      users = {users} />
+  return ( <
+    div className = "App" >
+    <
+    Form
+    // calling each function through the props
+    values = {
+      formValues
+    }
+    inputChange = {
+      inputChange
+    }
+    submit = {
+      submit
+    }
+    errors = {
+      formErrors
+    }
+    disabled = {
+      disabled
+    }
+    /> <
+    Users users = {
+      users
+    }
+    />
 
-    </div>
+    <
+    /div>
   );
 }
 
