@@ -17,7 +17,7 @@ const initialFormValues = {
   password: "",
   // position: "",
   // title: "",
-  // termsOfService: false,
+  termsOfService: false,
 };
 // setting errors on mandatory values that the user MUST fill in
 const initialFormErrors = {
@@ -95,7 +95,7 @@ function App() {
       password: formValues.password.trim(),
       // position: formValues.position,
       // title: formValues.title,
-      // termsOfService: formValues.termsOfService,
+      termsOfService: formValues.termsOfService,
     };
     postNewUsers(newUser);
   };
@@ -133,8 +133,8 @@ function App() {
     Users users = {
       users
     }
-    /> <
-    /div>
+    /> < /
+    div >
   );
 }
 

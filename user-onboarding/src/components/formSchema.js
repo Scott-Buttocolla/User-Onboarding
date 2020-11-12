@@ -23,7 +23,7 @@ export default yup.object().shape({
     // title: yup
     //     .string()
     //     .required("Must select one"),
-    // termsOfService: yup
-    //     .string()
-    //     .required("Must check")
+    termsOfService: yup
+        .string()
+        .required("Must check")
 })

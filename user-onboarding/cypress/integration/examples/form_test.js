@@ -62,16 +62,16 @@ describe("User-Onboarding app", () => {
             .should('exist')
             .click();
     })
-    it("Radio button tests", () => {
-        radioButton()
+    // it("Radio button tests", () => {
+    //     radioButton()
 
-    })
-    // it('Validation error test', () => {
-    //     nameInput()
-    //         .type('Scott test')
-    //         .clear();
-    //     nameValidationError()
-    //         .should('exist')
     // })
+    it('Validation error test', () => {
+        nameInput()
+            .type('Scott test')
+            .clear();
+        nameValidationError()
+            .should('exist')
+    })
 
 });

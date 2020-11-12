@@ -24,17 +24,19 @@ export default function Form(props) {
     return ( <
         div >
         <
-        h1 > New User Onboarding < /h1> <
+        h1 > New User Onboarding < /h1>{" "} <
         div >
         <
         form onSubmit = {
             onSubmit
         } >
         <
-        div className = "errors" >
-
-        {
-            /* calling all errors form formSchema */ } <
+        div className = "errors" > {
+            " "
+        } {
+            /* calling all errors form formSchema */ } {
+            " "
+        } <
         div > {
             errors.name
         } < /div> <div> {errors.email} </div >
@@ -47,12 +49,12 @@ export default function Form(props) {
             errors.title
         } < /div> <div> {errors.termsOfService} </div >
         <
-        /div> <
+        /div>{" "} <
         div >
         <
         label >
         <
-        strong > Name: < /strong> <
+        strong > Name: < /strong>{" "} <
         input value = {
             values.name
         }
@@ -65,10 +67,10 @@ export default function Form(props) {
         <
         br / >
         <
-        /label> <
+        /label>{" "} <
         label >
         <
-        strong > Email: < /strong> <
+        strong > Email: < /strong>{" "} <
         input value = {
             values.email
         }
@@ -81,10 +83,10 @@ export default function Form(props) {
         <
         br / >
         <
-        /label> <
+        /label>{" "} <
         label >
         <
-        strong > Password: < /strong> <
+        strong > Password: < /strong>{" "} <
         input value = {
             values.password
         }
@@ -97,76 +99,80 @@ export default function Form(props) {
         <
         br / >
         <
-        /label> {
+        /label>{" "} {
             /* <label>
-                          <strong> Position: </strong>
-                          <select
-                            id="position"
-                            name="position"
-                            onChange={onInputChange}
-                            value={values.position}
-                          >
-                            <option value="Default Option"> --Select One-- </option>
-                            <option value="Team Leader"> Team Leader </option>
-                            <option value="Frontend Engineer"> Frontend Engineer </option>
-                            <option value="Backend Engineer"> Backend Engineer </option>
-                            <option value="UI/UX Designer"> UI / UX Designer </option>
-                          </select>
-                          <br />
-                        </label>
-                        <label>
-                          <strong> Title: </strong>
-                          Mr.
-                          <input
-                            type="radio"
-                            name="title"
-                            value="Mr."
-                            checked={values.title === "Mr."}
-                            onChange={onInputChange}
-                          />
-                          Mrs.
-                          <input
-                            type="radio"
-                            name="title"
-                            value="Mrs."
-                            checked={values.title === "Mrs."}
-                            onChange={onInputChange}
-                          />
-                          Ms.
-                          <input
-                            type="radio"
-                            name="title"
-                            value="Ms."
-                            checked={values.title === "Ms."}
-                            onChange={onInputChange}
-                          />
-                          Dr.
-                          <input
-                            type="radio"
-                            name="title"
-                            value="Dr."
-                            checked={values.title === "Dr."}
-                            onChange={onInputChange}
-                          />
-                          <br />
-                        </label>
-                        <label>
-                          <strong> Terms of Service: </strong>
-                          <input
-                            type="checkbox"
-                            name="termsOfService"
-                            onChange={onInputChange}
-                          />
-                          <br />
-                        </label> */
+                                                  <strong> Position: </strong>
+                                                  <select
+                                                    id="position"
+                                                    name="position"
+                                                    onChange={onInputChange}
+                                                    value={values.position}
+                                                  >
+                                                    <option value="Default Option"> --Select One-- </option>
+                                                    <option value="Team Leader"> Team Leader </option>
+                                                    <option value="Frontend Engineer"> Frontend Engineer </option>
+                                                    <option value="Backend Engineer"> Backend Engineer </option>
+                                                    <option value="UI/UX Designer"> UI / UX Designer </option>
+                                                  </select>
+                                                  <br />
+                                                </label>
+                                                <label>
+                                                  <strong> Title: </strong>
+                                                  Mr.
+                                                  <input
+                                                    type="radio"
+                                                    name="title"
+                                                    value="Mr."
+                                                    checked={values.title === "Mr."}
+                                                    onChange={onInputChange}
+                                                  />
+                                                  Mrs.
+                                                  <input
+                                                    type="radio"
+                                                    name="title"
+                                                    value="Mrs."
+                                                    checked={values.title === "Mrs."}
+                                                    onChange={onInputChange}
+                                                  />
+                                                  Ms.
+                                                  <input
+                                                    type="radio"
+                                                    name="title"
+                                                    value="Ms."
+                                                    checked={values.title === "Ms."}
+                                                    onChange={onInputChange}
+                                                  />
+                                                  Dr.
+                                                  <input
+                                                    type="radio"
+                                                    name="title"
+                                                    value="Dr."
+                                                    checked={values.title === "Dr."}
+                                                    onChange={onInputChange}
+                                                  />
+                                                  <br />
+                                                </label> */
+        } {
+            " "
         } <
+        label >
+        <
+        strong > Terms of Service: < /strong>{" "} <
+        input type = "checkbox"
+        name = "termsOfService"
+        onChange = {
+            onInputChange
+        }
+        />{" "} <
+        br / >
+        <
+        /label>{" "} <
         button disabled = {
             disabled
-        } > submit < /button> {
-            /* disabled now works */ } <
-        /div> <
-        /form> <
-        /div> <
+        } > submit < /button>{" "} <
+        /div>{" "} <
+        /form>{" "} <
+        /div>{" "} <
         /div>
     );
 }
